@@ -1,4 +1,4 @@
-# Extensions-for-Google-Chrome
+# Old school calculator for Google Chrome (extension)
 
 To apply (source: https://developer.chrome.com/extensions/getstarted):
 
