@@ -9,7 +9,18 @@ document.addEventListener('DOMContentLoaded', function()
 	{
 		keys[i].onclick = function(e) 
 		{
-			
+			// Get the input and button values
+			var input = document.querySelector('.resultbar');
+			var inputVal = input.innerHTML;
+			var btnVal = this.innerHTML;
+
+			//Case: clear key pressed
+			if(btnVal == 'C') 
+			{
+				input.innerHTML = '';
+				decimalAdded = false;
+			}
+
 			// prevent page jumps
 			e.preventDefault();
 		} 
