@@ -20,6 +20,24 @@ document.addEventListener('DOMContentLoaded', function()
 				input.innerHTML = '';
 				decimalAdded = false;
 			}
+			//Case: eval key pressed
+			else if(btnVal == '=') 
+			{
+				if(inputVal != '')
+				{
+					var equation = inputVal;
+					var lastChar = equation[equation.length - 1];
+
+					//Case: last character of the equation not decimal, remove it
+					if(operators.indexOf(lastChar) > -1 || lastChar == '.')
+					  equation = equation.replace(/.$/, '');
+
+					//Calc equation
+					input.innerHTML = eval(equation);
+				}
+				
+				decimalAdded = false;
+			}
 
 			// prevent page jumps
 			e.preventDefault();
