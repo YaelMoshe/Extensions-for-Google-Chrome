@@ -38,7 +38,30 @@ document.addEventListener('DOMContentLoaded', function()
 				
 				decimalAdded = false;
 			}
+			//Case: operator key pressed
+			else if(operators.indexOf(btnVal) > -1) 
+			{
+				var lastChar = inputVal[inputVal.length - 1];
 
+				//Case: no operator at the last & equation is not empty  
+				if(inputVal != '' && operators.indexOf(lastChar) == -1) 
+				{
+					input.innerHTML += btnVal;
+				}
+				//Case: operator is minus & equation is empty
+				else if(inputVal == '' && btnVal == '-') 
+				{
+					input.innerHTML += btnVal;
+				}
+
+				//Case: operator replace (exclude when its just minus)
+				if(operators.indexOf(lastChar) > -1 && inputVal.length > 1) 
+				{
+					input.innerHTML = inputVal.replace(/.$/, btnVal);
+				}
+
+				decimalAdded = false;
+			}
 			// prevent page jumps
 			e.preventDefault();
 		} 
