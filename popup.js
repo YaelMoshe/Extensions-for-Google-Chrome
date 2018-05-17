@@ -62,6 +62,16 @@ document.addEventListener('DOMContentLoaded', function()
 
 				decimalAdded = false;
 			}
+			//Case: '.' key pressed 
+			else if(btnVal == '.') 
+			{
+				if(!decimalAdded) 
+				{
+					input.innerHTML += btnVal;
+					decimalAdded = true;
+				}
+			}
+
 			// prevent page jumps
 			e.preventDefault();
 		} 
