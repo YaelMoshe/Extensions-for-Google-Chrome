@@ -71,6 +71,11 @@ document.addEventListener('DOMContentLoaded', function()
 					decimalAdded = true;
 				}
 			}
+			//Case: decimal key pressed 
+			else 
+			{
+				input.innerHTML += btnVal;
+			}
 
 			// prevent page jumps
 			e.preventDefault();
